@@ -1,1 +1,10 @@
+# Ignore Intellij specific files
 /.idea/
+*.iml
+
+# Ignore Maven configs
+.mvn/
+
+# Ignore project folders
+target/
+out/
