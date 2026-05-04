@@ -1,0 +1,18 @@
+# Ignore Intellij specific files
+/.idea/
+*.iml
+
+# Ignore project folders
+target/
+out/
+
+# Node / Frontend
+node_modules/
+dist/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

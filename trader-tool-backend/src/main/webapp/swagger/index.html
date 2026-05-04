@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Swagger UI</title>
+    <link href="/trader-tool-backend/webjars/swagger-ui/5.32.5/swagger-ui.css" rel="stylesheet"/>
+</head>
+<body>
+    <div id="swagger-ui"></div>
+
+    <script src="/trader-tool-backend/webjars/swagger-ui/5.32.5/swagger-ui-bundle.js"></script>
+    <script>
+        const base = window.location.origin;
+
+        SwaggerUIBundle({
+            url: base + "/openapi",
+            dom_id: '#swagger-ui'
+        });
+    </script>
+</body>
+</html>

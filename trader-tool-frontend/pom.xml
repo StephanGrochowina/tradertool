@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>tradertool</artifactId>
+        <groupId>de.coiaf.tradertool</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>trader-tool-frontend</artifactId>
+    <packaging>war</packaging>
+
+    <name>trader-tool-frontend Maven Webapp</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>trader-tool-frontend</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+            </plugin>
+            <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-install-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>

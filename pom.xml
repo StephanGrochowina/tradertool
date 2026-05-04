@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>de.coiaf.tradertool</groupId>
+    <artifactId>tradertool</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>trader-tool-parent</name>
+    <url>https://www.coiaf.de</url>
+
+    <modules>
+        <module>trader-tool-backend</module>
+        <module>trader-tool-frontend</module>
+        <module>trader-tool-ear</module>
+        <module>trader-tool-testing</module>
+    </modules>
+
+    <!--
+    <prerequisites>
+        <maven>3.0</maven>
+    </prerequisites>
+    -->
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+        <!-- Versions -->
+        <junit.version>5.14.3</junit.version>
+        <mockito.version>5.23.0</mockito.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>javax</groupId>
+                <artifactId>javaee-api</artifactId>
+                <version>7.0</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- OpenAPI -->
+            <dependency>
+                <groupId>org.eclipse.microprofile.openapi</groupId>
+                <artifactId>microprofile-openapi-api</artifactId>
+                <version>4.1.1</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>swagger-ui</artifactId>
+                <version>5.32.5</version>
+            </dependency>
+            <!-- SLF4J -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>2.0.17</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.slf4j</groupId>
+                <artifactId>slf4j-jboss-logmanager</artifactId>
+                <version>1.2.0.Final</version>
+            </dependency>
+
+            <!-- Testing-->
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.dbunit</groupId>
+                <artifactId>dbunit</artifactId>
+                <version>3.0.0</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <!--classifier>jdk8</classifier-->
+                <version>2.4.240</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate.javax.persistence</groupId>
+                <artifactId>hibernate-jpa-2.1-api</artifactId>
+                <version>1.0.2.Final</version>
+                <scope>test</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>3.5.0</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.15.0</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>3.1.4</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>3.1.4</version>
+                </plugin>
+               <plugin>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.5.0</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>3.9.0</version>
+                </plugin>
+                <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
+                <plugin>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>3.5.0</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.21.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>3.4.0</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.5.5</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>3.5.1</version>
+                </plugin>
+
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
