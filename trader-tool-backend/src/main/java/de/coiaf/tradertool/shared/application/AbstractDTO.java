@@ -28,7 +28,7 @@ public abstract class AbstractDTO {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!AbstractDTO.class.isAssignableFrom(o.getClass())) return false;
         if (this.getBusinessKey() == null) return false;
 
         AbstractDTO that = (AbstractDTO) o;

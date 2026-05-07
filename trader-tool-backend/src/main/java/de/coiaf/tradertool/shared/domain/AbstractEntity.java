@@ -24,7 +24,7 @@ public abstract class AbstractEntity {
     @Column(name = "modified", nullable = false)
     private LocalDateTime modified;
 
-    @Column(name = "business_key", nullable = false, unique = true)
+    @Column(name = "business_key", nullable = false, unique = true, columnDefinition = "BINARY(16)")
     @NotNull
     @Convert(converter = BusinessKeyAttributeConverter.class)
     private BusinessKey businessKey;
@@ -72,7 +72,7 @@ public abstract class AbstractEntity {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof AbstractEntity)) return false;
+        if (!AbstractEntity.class.isAssignableFrom(o.getClass())) return false;
 
         AbstractEntity that = (AbstractEntity) o;
         return this.getBusinessKey() != null && this.getBusinessKey().equals(that.getBusinessKey());

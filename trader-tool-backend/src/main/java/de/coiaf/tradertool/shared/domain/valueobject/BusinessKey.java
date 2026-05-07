@@ -29,4 +29,9 @@ public class BusinessKey {
     public int hashCode() {
         return Objects.hash(this.getValue());
     }
+
+    @Override
+    public String toString() {
+        return "BusinessKey{" + "value=" + value + '}';
+    }
 }
